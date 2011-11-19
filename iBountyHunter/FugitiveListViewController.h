@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "iBountyHunterAppDelegate.h"
 #import "Fugitive.h"
+#import "DetailViewController.h"
 
 @interface FugitiveListViewController : UITableViewController {
     
