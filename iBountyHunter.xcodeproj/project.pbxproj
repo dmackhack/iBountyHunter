@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2826D5EE1477889A00D4FE51 /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 2826D5ED1477889A00D4FE51 /* Fugitive.m */; };
 		287ACDCE14739D5400DA22C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCD14739D5400DA22C7 /* UIKit.framework */; };
 		287ACDD014739D5400DA22C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCF14739D5400DA22C7 /* Foundation.framework */; };
 		287ACDD214739D5400DA22C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDD114739D5400DA22C7 /* CoreGraphics.framework */; };
@@ -22,10 +23,11 @@
 		287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDF814739D9E00DA22C7 /* FugitiveListViewController.m */; };
 		287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */; };
 		28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 28818FCA1475203100EAC21F /* iBountyHunter.sqlite */; };
-		2883B2CE1476E7D400C93AA8 /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 2883B2CD1476E7D400C93AA8 /* Fugitive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2826D5EC1477889A00D4FE51 /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
+		2826D5ED1477889A00D4FE51 /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
 		287ACDC914739D5400DA22C7 /* iBountyHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBountyHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287ACDCD14739D5400DA22C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		287ACDCF14739D5400DA22C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,8 +51,6 @@
 		287ACDFA14739FCA00DA22C7 /* CapturedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedListViewController.h; sourceTree = "<group>"; };
 		287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedListViewController.m; sourceTree = "<group>"; };
 		28818FCA1475203100EAC21F /* iBountyHunter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iBountyHunter.sqlite; sourceTree = "<group>"; };
-		2883B2CC1476E7D400C93AA8 /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fugitive.h; path = iBountyHunter/Fugitive.h; sourceTree = "<group>"; };
-		2883B2CD1476E7D400C93AA8 /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fugitive.m; path = iBountyHunter/Fugitive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +112,8 @@
 		287ACDD614739D5400DA22C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2883B2CC1476E7D400C93AA8 /* Fugitive.h */,
-				2883B2CD1476E7D400C93AA8 /* Fugitive.m */,
+				2826D5EC1477889A00D4FE51 /* Fugitive.h */,
+				2826D5ED1477889A00D4FE51 /* Fugitive.m */,
 				28818FCA1475203100EAC21F /* iBountyHunter.sqlite */,
 				287ACDD714739D5400DA22C7 /* iBountyHunter-Info.plist */,
 				287ACDD814739D5400DA22C7 /* InfoPlist.strings */,
@@ -215,7 +215,7 @@
 				287ACDEE14739D5400DA22C7 /* iBountyHunterAppDelegate_iPad.m in Sources */,
 				287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */,
 				287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */,
-				2883B2CE1476E7D400C93AA8 /* Fugitive.m in Sources */,
+				2826D5EE1477889A00D4FE51 /* Fugitive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
