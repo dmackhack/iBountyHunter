@@ -85,7 +85,7 @@
     }
     else
     {
-        NSLog(@"found %@ fugitives", [mutableFetchResults count]);
+        NSLog(@"found fugitives");
     }
     
     self.fugitives = mutableFetchResults;

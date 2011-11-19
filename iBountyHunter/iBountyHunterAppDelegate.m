@@ -28,15 +28,28 @@
     BOOL dbexists = [fileManager fileExistsAtPath:[writableDBPath path]];
     if (!dbexists)
     {
-        NSURL* defaultDBPath = [[NSBundle mainBundle] URLForResource:@"iBountyHuner" withExtension:@"sqlite"];
+        NSLog(@"Writeable DB NOT found at path %@", [writableDBPath path]);
+        NSURL* defaultDBPath = [[NSBundle mainBundle] URLForResource:@"iBountyHunter" withExtension:@"sqlite"];
         
-        NSError* error;
-        BOOL success = [fileManager copyItemAtURL:defaultDBPath toURL:writableDBPath error:&error];
-        
-        if (!success)
+        if ([fileManager fileExistsAtPath:[defaultDBPath path]])
         {
-            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+            NSLog(@"FOUND default DB at path %@", [defaultDBPath path]);
+            NSError* error;
+            BOOL success = [fileManager copyItemAtURL:defaultDBPath toURL:writableDBPath error:&error];
+        
+            if (!success)
+            {
+                NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+            }
         }
+        else
+        {
+            NSLog(@"Can't find default DB at path %@", [defaultDBPath path]);
+        }
+    }
+    else
+    {
+        NSLog(@"Writeable db FOUND at path %@", [writableDBPath path]);
     }
     
 }
