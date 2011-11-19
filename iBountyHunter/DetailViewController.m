@@ -10,7 +10,7 @@
 
 @implementation DetailViewController
 
-@synthesize fugitive=fugitive_, nameLabel=nameLabel_, idLabel=idLabel_, descriptionTextView=descriptionTextView_, bountyLabel=bountyLabel_;
+@synthesize fugitive=fugitive_, nameLabel=nameLabel_, idLabel=idLabel_, descriptionTextView=descriptionTextView_, bountyLabel=bountyLabel_, capturedSeg=capturedSeg_, dateLabel=dateLabel_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,6 +47,8 @@
         nameLabel_.text = fugitive_.name;
         descriptionTextView_.text = fugitive_.desc;
         bountyLabel_.text = [NSString stringWithFormat:@"%d", fugitive_.bounty];
+        capturedSeg_.selectedSegmentIndex = [fugitive_.captured boolValue] ? 0 : 1;
+        dateLabel_.text = [fugitive_.captdate description];
     }
 }
 
@@ -70,7 +72,24 @@
     [nameLabel_ release];
     [descriptionTextView_ release];
     [bountyLabel_ release];
+    [capturedSeg_ release];
+    [dateLabel_ release];
     [super dealloc];
 }
 
+- (IBAction)capturedToggled:(id)sender 
+{
+    NSLog(@"Toggling capture");
+    if (capturedSeg_.selectedSegmentIndex == 0)
+    {
+        fugitive_.captured = [NSNumber numberWithBool:YES];
+        fugitive_.captdate = [NSDate date];
+    }
+    else
+    {
+        fugitive_.captured = [NSNumber numberWithBool:NO];
+        fugitive_.captdate = nil;
+    }
+    dateLabel_.text = [fugitive_.captdate description];
+}
 @end
