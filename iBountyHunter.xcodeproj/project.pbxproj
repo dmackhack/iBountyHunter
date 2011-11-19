@@ -23,6 +23,8 @@
 		287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDF814739D9E00DA22C7 /* FugitiveListViewController.m */; };
 		287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */; };
 		28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 28818FCA1475203100EAC21F /* iBountyHunter.sqlite */; };
+		63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FAA7291477915D001C0220 /* DetailViewController.m */; };
+		63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FAA72A1477915D001C0220 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,9 @@
 		287ACDFA14739FCA00DA22C7 /* CapturedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedListViewController.h; sourceTree = "<group>"; };
 		287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedListViewController.m; sourceTree = "<group>"; };
 		28818FCA1475203100EAC21F /* iBountyHunter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iBountyHunter.sqlite; sourceTree = "<group>"; };
+		63FAA7281477915D001C0220 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		63FAA7291477915D001C0220 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		63FAA72A1477915D001C0220 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,9 @@
 				287ACDF814739D9E00DA22C7 /* FugitiveListViewController.m */,
 				287ACDFA14739FCA00DA22C7 /* CapturedListViewController.h */,
 				287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */,
+				63FAA7281477915D001C0220 /* DetailViewController.h */,
+				63FAA7291477915D001C0220 /* DetailViewController.m */,
+				63FAA72A1477915D001C0220 /* DetailViewController.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 				287ACDEA14739D5400DA22C7 /* MainWindow_iPhone.xib in Resources */,
 				287ACDF114739D5400DA22C7 /* MainWindow_iPad.xib in Resources */,
 				28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */,
+				63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +228,7 @@
 				287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */,
 				287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */,
 				2826D5EE1477889A00D4FE51 /* Fugitive.m in Sources */,
+				63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
