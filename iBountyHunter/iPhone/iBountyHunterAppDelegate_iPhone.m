@@ -10,6 +10,8 @@
 
 @implementation iBountyHunterAppDelegate_iPhone
 
+@synthesize tabBarController;
+
 - (void)dealloc
 {
 	[super dealloc];

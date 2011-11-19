@@ -11,6 +11,8 @@
 
 @implementation FugitiveListViewController
 
+@synthesize fugitives=fugitives_;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -22,6 +24,7 @@
 
 - (void)dealloc
 {
+    [fugitives_ release];
     [super dealloc];
 }
 
@@ -56,6 +59,40 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // get a copy of the managed object context from the Application Delegate
+    iBountyHunterAppDelegate* appDelegate = (iBountyHunterAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext* context = appDelegate.managedObjectContext;
+     
+    NSFetchRequest* fetchAllFugitives = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* fugitiveEntityDescription = [NSEntityDescription entityForName:@"Fugitive" inManagedObjectContext:context];
+    [fetchAllFugitives setEntity:fugitiveEntityDescription];
+    
+    // no predicate required. we are fetching everything
+    
+    NSSortDescriptor* fugitiveSD = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    [fetchAllFugitives setSortDescriptors:[NSArray arrayWithObject:fugitiveSD]];
+    
+    NSError* error;
+    NSMutableArray* mutableFetchResults = [[context executeFetchRequest:fetchAllFugitives error:&error] mutableCopy];
+    
+    if (mutableFetchResults == nil)
+    {
+        // handle the error
+        NSLog(@"no results found");
+    }
+    else
+    {
+        NSLog(@"found %@ fugitives", [mutableFetchResults count]);
+    }
+    
+    self.fugitives = mutableFetchResults;
+    
+    [mutableFetchResults release];
+    [fetchAllFugitives release];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,16 +120,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.fugitives count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,7 +139,9 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    Fugitive* fugitive = [fugitives_ objectAtIndex:indexPath.row];
+    cell.textLabel.text = fugitive.name;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

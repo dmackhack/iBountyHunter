@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "iBountyHunterAppDelegate.h"
+#import "Fugitive.h"
 
 @interface FugitiveListViewController : UITableViewController {
     
+    NSMutableArray* fugitives_;
 }
+
+@property (nonatomic, retain) NSMutableArray* fugitives;
 
 @end

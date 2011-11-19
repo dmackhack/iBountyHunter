@@ -19,9 +19,32 @@
 
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
+- (void) createEditableCopyOfDatabaseIfNeeded
+{
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    NSURL* documentdDir = [self applicationDocumentsDirectory];
+    NSURL* writableDBPath = [documentdDir URLByAppendingPathComponent:@"iBountyHunter.sqlite"];
+    
+    BOOL dbexists = [fileManager fileExistsAtPath:[writableDBPath path]];
+    if (!dbexists)
+    {
+        NSURL* defaultDBPath = [[NSBundle mainBundle] URLForResource:@"iBountyHuner" withExtension:@"sqlite"];
+        
+        NSError* error;
+        BOOL success = [fileManager copyItemAtURL:defaultDBPath toURL:writableDBPath error:&error];
+        
+        if (!success)
+        {
+            NSAssert1(0, @"Failed to create writable database file with message '%@'.", [error localizedDescription]);
+        }
+    }
+    
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self createEditableCopyOfDatabaseIfNeeded];
     [self.window makeKeyAndVisible];
     return YES;
 }

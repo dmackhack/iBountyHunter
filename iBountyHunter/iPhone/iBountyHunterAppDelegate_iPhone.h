@@ -11,6 +11,10 @@
 
 @interface iBountyHunterAppDelegate_iPhone : iBountyHunterAppDelegate {
     
+    UITabBarController* tabBarController_;
+    
 }
+
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end
