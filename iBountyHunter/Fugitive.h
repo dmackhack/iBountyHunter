@@ -2,7 +2,7 @@
 //  Fugitive.h
 //  iBountyHunter
 //
-//  Created by David Mackenzie on 19/11/11.
+//  Created by David Mackenzie on 20/11/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -17,5 +17,7 @@
 @property (nonatomic, retain) NSDecimalNumber * bounty;
 @property (nonatomic, retain) NSNumber * fugitiveID;
 @property (nonatomic, retain) NSString * desc;
+@property (nonatomic, retain) NSNumber * captured;
+@property (nonatomic, retain) NSDate * captdate;
 
 @end
