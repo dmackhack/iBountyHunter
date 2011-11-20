@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Fugitive.h"
+#import "CapturedPhotoViewController.h"
 
 @interface DetailViewController : UIViewController
 {
@@ -30,5 +31,6 @@
 @property (nonatomic, retain) IBOutlet UILabel* dateLabel;
 
 - (IBAction)capturedToggled:(id)sender;
+- (IBAction)showInfoButtonPressed:(id)sender;
 
 @end

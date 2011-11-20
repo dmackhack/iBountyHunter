@@ -92,4 +92,14 @@
     }
     dateLabel_.text = [fugitive_.captdate description];
 }
+
+- (IBAction)showInfoButtonPressed:(id)sender 
+{
+    CapturedPhotoViewController* capturedPhotoView = [[CapturedPhotoViewController alloc] initWithNibName:@"CapturedPhotoViewController" bundle:nil];
+    capturedPhotoView.fugitive = self.fugitive;
+    
+    capturedPhotoView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:capturedPhotoView animated:YES];
+    [capturedPhotoView release];
+}
 @end

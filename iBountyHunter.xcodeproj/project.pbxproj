@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28051EF014785BF400FC3A7F /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 28051EEF14785BF400FC3A7F /* Fugitive.m */; };
 		287ACDCE14739D5400DA22C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCD14739D5400DA22C7 /* UIKit.framework */; };
 		287ACDD014739D5400DA22C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCF14739D5400DA22C7 /* Foundation.framework */; };
 		287ACDD214739D5400DA22C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDD114739D5400DA22C7 /* CoreGraphics.framework */; };
@@ -23,14 +22,15 @@
 		287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDF814739D9E00DA22C7 /* FugitiveListViewController.m */; };
 		287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */; };
 		28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 28818FCA1475203100EAC21F /* iBountyHunter.sqlite */; };
+		637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */; };
+		637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */; };
+		637AB05214790DBE00A4581F /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AB05114790DBD00A4581F /* Fugitive.m */; };
 		63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FAA7291477915D001C0220 /* DetailViewController.m */; };
 		63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FAA72A1477915D001C0220 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		28051EED14785B8400FC3A7F /* iBountyHunter 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 3.xcdatamodel"; sourceTree = "<group>"; };
-		28051EEE14785BF400FC3A7F /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
-		28051EEF14785BF400FC3A7F /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
 		287ACDC914739D5400DA22C7 /* iBountyHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBountyHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287ACDCD14739D5400DA22C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		287ACDCF14739D5400DA22C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +54,12 @@
 		287ACDFA14739FCA00DA22C7 /* CapturedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedListViewController.h; sourceTree = "<group>"; };
 		287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedListViewController.m; sourceTree = "<group>"; };
 		28818FCA1475203100EAC21F /* iBountyHunter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iBountyHunter.sqlite; sourceTree = "<group>"; };
+		637AB04914790A9600A4581F /* CapturedPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedPhotoViewController.h; sourceTree = "<group>"; };
+		637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedPhotoViewController.m; sourceTree = "<group>"; };
+		637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedPhotoViewController.xib; sourceTree = "<group>"; };
+		637AB04F14790D7500A4581F /* iBountyHunter 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 4.xcdatamodel"; sourceTree = "<group>"; };
+		637AB05014790DBD00A4581F /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
+		637AB05114790DBD00A4581F /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
 		63FAA7281477915D001C0220 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		63FAA7291477915D001C0220 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		63FAA72A1477915D001C0220 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -118,8 +124,8 @@
 		287ACDD614739D5400DA22C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				28051EEE14785BF400FC3A7F /* Fugitive.h */,
-				28051EEF14785BF400FC3A7F /* Fugitive.m */,
+				637AB05014790DBD00A4581F /* Fugitive.h */,
+				637AB05114790DBD00A4581F /* Fugitive.m */,
 				28818FCA1475203100EAC21F /* iBountyHunter.sqlite */,
 				287ACDD714739D5400DA22C7 /* iBountyHunter-Info.plist */,
 				287ACDD814739D5400DA22C7 /* InfoPlist.strings */,
@@ -142,6 +148,9 @@
 				63FAA7281477915D001C0220 /* DetailViewController.h */,
 				63FAA7291477915D001C0220 /* DetailViewController.m */,
 				63FAA72A1477915D001C0220 /* DetailViewController.xib */,
+				637AB04914790A9600A4581F /* CapturedPhotoViewController.h */,
+				637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */,
+				637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */,
 			);
 			name = iPhone;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 				287ACDF114739D5400DA22C7 /* MainWindow_iPad.xib in Resources */,
 				28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */,
 				63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */,
+				637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +239,8 @@
 				287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */,
 				287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */,
 				63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */,
-				28051EF014785BF400FC3A7F /* Fugitive.m in Sources */,
+				637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */,
+				637AB05214790DBE00A4581F /* Fugitive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +365,11 @@
 		287ACDE114739D5400DA22C7 /* iBountyHunter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				637AB04F14790D7500A4581F /* iBountyHunter 4.xcdatamodel */,
 				28051EED14785B8400FC3A7F /* iBountyHunter 3.xcdatamodel */,
 				287ACDE214739D5400DA22C7 /* iBountyHunter.xcdatamodel */,
 			);
-			currentVersion = 28051EED14785B8400FC3A7F /* iBountyHunter 3.xcdatamodel */;
+			currentVersion = 637AB04F14790D7500A4581F /* iBountyHunter 4.xcdatamodel */;
 			path = iBountyHunter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
