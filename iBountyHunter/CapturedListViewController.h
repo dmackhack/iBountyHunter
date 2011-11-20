@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FugitiveListViewController.h"
 
+@interface CapturedListViewController : FugitiveListViewController {
 
-@interface CapturedListViewController : UITableViewController {
-    
 }
 
 @end

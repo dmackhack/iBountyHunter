@@ -11,11 +11,17 @@
 #import "Fugitive.h"
 #import "DetailViewController.h"
 
-@interface FugitiveListViewController : UITableViewController {
+@interface FugitiveListViewController : UITableViewController <NSFetchedResultsControllerDelegate> 
+{
     
-    NSMutableArray* fugitives_;
+    //NSMutableArray* fugitives_;
+    NSFetchedResultsController* resultsController_;
+    BOOL captured_;
+    NSString* cache_;
 }
 
-@property (nonatomic, retain) NSMutableArray* fugitives;
+@property (nonatomic, readonly) NSFetchedResultsController* resultsController;
+@property BOOL captured;
+@property (nonatomic, retain) NSString* cache;
 
 @end

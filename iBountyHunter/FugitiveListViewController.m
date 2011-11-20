@@ -11,20 +11,21 @@
 
 @implementation FugitiveListViewController
 
-@synthesize fugitives=fugitives_;
+@synthesize captured=captured_, cache=cache_;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+
     }
+    
     return self;
 }
 
 - (void)dealloc
 {
-    [fugitives_ release];
+    [resultsController_ release];
     [super dealloc];
 }
 
@@ -42,6 +43,8 @@
 {
     [super viewDidLoad];
 
+    self.captured = NO;
+    self.cache = @"uncaptured_list.cache";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -59,39 +62,48 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+- (NSFetchedResultsController *) resultsController
+{
+    if (resultsController_ != nil)
+    {
+        return resultsController_;
+    }
     
-    // get a copy of the managed object context from the Application Delegate
     iBountyHunterAppDelegate* appDelegate = (iBountyHunterAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     NSManagedObjectContext* context = appDelegate.managedObjectContext;
-     
-    NSFetchRequest* fetchAllFugitives = [[NSFetchRequest alloc] init];
+    
+    NSFetchRequest* fetchFugitives = [[NSFetchRequest alloc] init];
     
     NSEntityDescription* fugitiveEntityDescription = [NSEntityDescription entityForName:@"Fugitive" inManagedObjectContext:context];
-    [fetchAllFugitives setEntity:fugitiveEntityDescription];
+    [fetchFugitives setEntity:fugitiveEntityDescription];
     
     // no predicate required. we are fetching everything
     
+    //NSLog(@"Captured: %i", [self captured]);
+    //NSLog(@"Cache: %@", [self cache]);
+    
+    NSPredicate* fugitivesPredicate = [NSPredicate predicateWithFormat:@"captured == %i", captured_];
+    [fetchFugitives setPredicate:fugitivesPredicate];                                             
+    
     NSSortDescriptor* fugitiveSD = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    [fetchAllFugitives setSortDescriptors:[NSArray arrayWithObject:fugitiveSD]];
+    [fetchFugitives setSortDescriptors:[NSArray arrayWithObject:fugitiveSD]];
+    
+    resultsController_ = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchFugitives managedObjectContext:context sectionNameKeyPath:nil cacheName:[self cache]];
+    
+    resultsController_.delegate = self;
     
     NSError* error;
-    NSMutableArray* mutableFetchResults = [[context executeFetchRequest:fetchAllFugitives error:&error] mutableCopy];
+    BOOL success = [resultsController_ performFetch:&error];
     
-    if (mutableFetchResults == nil)
+    if (!success)
     {
-        // handle the error
-        NSLog(@"no results found");
+        NSLog(@"Error fetching results");
     }
-    else
-    {
-        NSLog(@"found fugitives");
-    }
-    
-    self.fugitives = mutableFetchResults;
-    
-    [mutableFetchResults release];
-    [fetchAllFugitives release];
+    [fetchFugitives release];
+    return resultsController_;
     
 }
 
@@ -121,13 +133,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [[self.resultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.fugitives count];
+    return [[[self.resultsController sections] objectAtIndex:section] numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -139,7 +151,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    Fugitive* fugitive = [fugitives_ objectAtIndex:indexPath.row];
+    Fugitive* fugitive = [self.resultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = fugitive.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -192,12 +204,17 @@
     // Navigation logic may go here. Create and push another view controller.
     
      DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    [detailViewController setFugitive:[fugitives_ objectAtIndex:indexPath.row]];
+    [detailViewController setFugitive:[self.resultsController objectAtIndexPath:indexPath]];
     
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      
+}
+
+- (void) controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView reloadData];
 }
 
 @end
