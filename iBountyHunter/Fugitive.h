@@ -2,7 +2,7 @@
 //  Fugitive.h
 //  iBountyHunter
 //
-//  Created by David MacKenzie on 20/11/11.
+//  Created by David Mackenzie on 20/11/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,14 +10,17 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Fugitive : NSManagedObject
-
+@interface Fugitive : NSManagedObject {
+@private
+}
+@property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSNumber * captured;
-@property (nonatomic, retain) NSDate * captdate;
 @property (nonatomic, retain) NSDecimalNumber * bounty;
+@property (nonatomic, retain) NSDate * captdate;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * fugitiveID;
-@property (nonatomic, retain) NSString * desc;
 @property (nonatomic, retain) NSData * image;
+@property (nonatomic, retain) NSNumber * capturedLat;
+@property (nonatomic, retain) NSNumber * capturedLon;
 
 @end

@@ -2,7 +2,7 @@
 //  Fugitive.m
 //  iBountyHunter
 //
-//  Created by David MacKenzie on 20/11/11.
+//  Created by David Mackenzie on 20/11/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,13 +10,14 @@
 
 
 @implementation Fugitive
-
+@dynamic desc;
 @dynamic captured;
-@dynamic captdate;
 @dynamic bounty;
+@dynamic captdate;
 @dynamic name;
 @dynamic fugitiveID;
-@dynamic desc;
 @dynamic image;
+@dynamic capturedLat;
+@dynamic capturedLon;
 
 @end
