@@ -10,7 +10,7 @@
 
 @implementation CapturedPhotoViewController
 
-@synthesize fugitive=fugitive_, fugitiveImage=fugitiveImage_;
+@synthesize fugitive=fugitive_, fugitiveImage=fugitiveImage_, mapView=mapView_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +44,13 @@
     {
         NSLog(@"No Image found");
     }
+    
+    if (fugitive_.capturedLat != nil)
+    {
+        [self.mapView addAnnotation:fugitive_];
+    }
+    
+    [self initialiseMapView];
 }
 
 - (void)viewDidLoad
@@ -132,10 +139,24 @@
     [self presentModalViewController:picker animated:YES];
 }
 
+- (void)initialiseMapView
+{
+    if ([fugitive_.captured boolValue])
+    {
+        CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake([fugitive_.capturedLat doubleValue], [fugitive_.capturedLon doubleValue]);
+        MKCoordinateSpan mapSpan = MKCoordinateSpanMake(0.005, 0.005);
+        MKCoordinateRegion mapRegion = MKCoordinateRegionMake(mapCenter, mapSpan);
+        
+        self.mapView.region = mapRegion;
+        self.mapView.mapType = MKMapTypeHybrid;
+    }
+}
+
 - (void)dealloc
 {
     [fugitiveImage_ release];
     [fugitive_ release];
+    [mapView_ release];
     [super dealloc];
 }
 

@@ -20,4 +20,19 @@
 @dynamic capturedLat;
 @dynamic capturedLon;
 
+- (CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake([self.capturedLat doubleValue], [self.capturedLon doubleValue]);
+}
+
+-(NSString *)title
+{
+    return self.name;
+}
+
+- (NSString *)subtitle
+{
+    return self.desc;
+}
+
 @end

@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
 
 
-@interface Fugitive : NSManagedObject {
+@interface Fugitive : NSManagedObject <MKAnnotation> {
 @private
 }
 @property (nonatomic, retain) NSString * desc;
@@ -22,5 +23,10 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSNumber * capturedLat;
 @property (nonatomic, retain) NSNumber * capturedLon;
+
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+
+- (NSString *)title;
+- (NSString *)subtitle;
 
 @end

@@ -23,6 +23,7 @@
 		287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */; };
 		287E80DB147923C000E39D09 /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 287E80DA147923C000E39D09 /* Fugitive.m */; };
 		287E80DF1479259900E39D09 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287E80DE1479259800E39D09 /* CoreLocation.framework */; };
+		28806805147A4C7600156A90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28806804147A4C7600156A90 /* MapKit.framework */; };
 		28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 28818FCA1475203100EAC21F /* iBountyHunter.sqlite */; };
 		637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */; };
 		637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */; };
@@ -58,6 +59,7 @@
 		287E80D9147923C000E39D09 /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
 		287E80DA147923C000E39D09 /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
 		287E80DE1479259800E39D09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		28806804147A4C7600156A90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		28818FCA1475203100EAC21F /* iBountyHunter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iBountyHunter.sqlite; sourceTree = "<group>"; };
 		637AB04914790A9600A4581F /* CapturedPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedPhotoViewController.h; sourceTree = "<group>"; };
 		637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedPhotoViewController.m; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28806805147A4C7600156A90 /* MapKit.framework in Frameworks */,
 				287ACDCE14739D5400DA22C7 /* UIKit.framework in Frameworks */,
 				287ACDD014739D5400DA22C7 /* Foundation.framework in Frameworks */,
 				287ACDD214739D5400DA22C7 /* CoreGraphics.framework in Frameworks */,
@@ -104,6 +107,7 @@
 		287ACDCC14739D5400DA22C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28806804147A4C7600156A90 /* MapKit.framework */,
 				287E80DE1479259800E39D09 /* CoreLocation.framework */,
 				287ACDCD14739D5400DA22C7 /* UIKit.framework */,
 				287ACDCF14739D5400DA22C7 /* Foundation.framework */,
