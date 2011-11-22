@@ -11,7 +11,7 @@
 
 @implementation FugitiveListViewController
 
-@synthesize captured=captured_, cache=cache_;
+@synthesize captured=captured_, cache=cache_, dossierView=dossierView_;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,6 +25,7 @@
 
 - (void)dealloc
 {
+    [dossierView_ release];
     [resultsController_ release];
     [super dealloc];
 }
@@ -124,7 +125,11 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) 
+    {
+        return YES;
+    }
+    
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -203,12 +208,21 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    [detailViewController setFugitive:[self.resultsController objectAtIndexPath:indexPath]];
+     
     
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        [self.dossierView updateDossier];
+    }
+    else
+    {
+        DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+        [detailViewController setFugitive:[self.resultsController objectAtIndexPath:indexPath]];
+        [self.navigationController pushViewController:detailViewController animated:YES];
+        [detailViewController release];
+    }
      
 }
 

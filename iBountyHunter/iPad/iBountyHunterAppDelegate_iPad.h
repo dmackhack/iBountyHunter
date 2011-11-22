@@ -10,7 +10,9 @@
 #import "iBountyHunterAppDelegate.h"
 
 @interface iBountyHunterAppDelegate_iPad : iBountyHunterAppDelegate {
-    
+
 }
+
+
 
 @end

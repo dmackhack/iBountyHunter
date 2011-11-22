@@ -50,6 +50,7 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 480}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -69,9 +70,9 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<bool key="IBUIHorizontal">NO</bool>
-				<object class="IBUINavigationController" key="IBUISelectedViewController" id="43213950">
-					<object class="IBUITabBarItem" key="IBUITabBarItem" id="119871262">
-						<string key="IBUITitle">Captured</string>
+				<object class="IBUINavigationController" key="IBUISelectedViewController" id="75038968">
+					<object class="IBUITabBarItem" key="IBUITabBarItem" id="84406404">
+						<string key="IBUITitle">Fugitives</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<reference key="IBUIParentViewController" ref="372024669"/>
@@ -82,7 +83,7 @@
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					<bool key="IBUIHorizontal">NO</bool>
-					<object class="IBUINavigationBar" key="IBUINavigationBar" id="564535994">
+					<object class="IBUINavigationBar" key="IBUINavigationBar" id="749608013">
 						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{0, 0}</string>
@@ -93,12 +94,12 @@
 					</object>
 					<object class="NSMutableArray" key="IBUIViewControllers">
 						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="IBUIViewController" id="381909921">
-							<object class="IBUINavigationItem" key="IBUINavigationItem" id="527388156">
-								<string key="IBUITitle">Captured</string>
+						<object class="IBUIViewController" id="522399845">
+							<object class="IBUINavigationItem" key="IBUINavigationItem" id="142031089">
+								<string key="IBUITitle">Fugitives</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<reference key="IBUIParentViewController" ref="43213950"/>
+							<reference key="IBUIParentViewController" ref="75038968"/>
 							<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 								<int key="IBUIInterfaceOrientation">1</int>
 								<int key="interfaceOrientation">1</int>
@@ -110,9 +111,10 @@
 				</object>
 				<object class="NSMutableArray" key="IBUIViewControllers">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUINavigationController" id="75038968">
-						<object class="IBUITabBarItem" key="IBUITabBarItem" id="84406404">
-							<string key="IBUITitle">Fugitives</string>
+					<reference ref="75038968"/>
+					<object class="IBUINavigationController" id="43213950">
+						<object class="IBUITabBarItem" key="IBUITabBarItem" id="119871262">
+							<string key="IBUITitle">Captured</string>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="372024669"/>
@@ -123,7 +125,7 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIHorizontal">NO</bool>
-						<object class="IBUINavigationBar" key="IBUINavigationBar" id="749608013">
+						<object class="IBUINavigationBar" key="IBUINavigationBar" id="564535994">
 							<nil key="NSNextResponder"/>
 							<int key="NSvFlags">256</int>
 							<string key="NSFrameSize">{0, 0}</string>
@@ -134,12 +136,12 @@
 						</object>
 						<object class="NSMutableArray" key="IBUIViewControllers">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIViewController" id="522399845">
-								<object class="IBUINavigationItem" key="IBUINavigationItem" id="142031089">
-									<string key="IBUITitle">Fugitives</string>
+							<object class="IBUIViewController" id="381909921">
+								<object class="IBUINavigationItem" key="IBUINavigationItem" id="527388156">
+									<string key="IBUITitle">Captured</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
-								<reference key="IBUIParentViewController" ref="75038968"/>
+								<reference key="IBUIParentViewController" ref="43213950"/>
 								<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 									<int key="IBUIInterfaceOrientation">1</int>
 									<int key="interfaceOrientation">1</int>
@@ -149,13 +151,13 @@
 							</object>
 						</object>
 					</object>
-					<reference ref="43213950"/>
 				</object>
 				<object class="IBUITabBar" key="IBUITabBar" id="639433432">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
+					<reference key="NSNextKeyView"/>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>

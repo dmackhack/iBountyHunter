@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285E53BC147C36ED0053264E /* FugitiveDossierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 285E53BA147C36ED0053264E /* FugitiveDossierViewController.m */; };
+		285E53BD147C36ED0053264E /* FugitiveDossierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285E53BB147C36ED0053264E /* FugitiveDossierViewController.xib */; };
 		287ACDCE14739D5400DA22C7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCD14739D5400DA22C7 /* UIKit.framework */; };
 		287ACDD014739D5400DA22C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDCF14739D5400DA22C7 /* Foundation.framework */; };
 		287ACDD214739D5400DA22C7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287ACDD114739D5400DA22C7 /* CoreGraphics.framework */; };
@@ -33,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		28051EED14785B8400FC3A7F /* iBountyHunter 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 3.xcdatamodel"; sourceTree = "<group>"; };
+		285E53B9147C36ED0053264E /* FugitiveDossierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FugitiveDossierViewController.h; sourceTree = "<group>"; };
+		285E53BA147C36ED0053264E /* FugitiveDossierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FugitiveDossierViewController.m; sourceTree = "<group>"; };
+		285E53BB147C36ED0053264E /* FugitiveDossierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FugitiveDossierViewController.xib; sourceTree = "<group>"; };
 		287ACDC914739D5400DA22C7 /* iBountyHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBountyHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287ACDCD14739D5400DA22C7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		287ACDCF14739D5400DA22C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -170,6 +175,9 @@
 				287ACDEC14739D5400DA22C7 /* iBountyHunterAppDelegate_iPad.h */,
 				287ACDED14739D5400DA22C7 /* iBountyHunterAppDelegate_iPad.m */,
 				287ACDEF14739D5400DA22C7 /* MainWindow_iPad.xib */,
+				285E53B9147C36ED0053264E /* FugitiveDossierViewController.h */,
+				285E53BA147C36ED0053264E /* FugitiveDossierViewController.m */,
+				285E53BB147C36ED0053264E /* FugitiveDossierViewController.xib */,
 			);
 			name = iPad;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 				28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */,
 				63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */,
 				637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */,
+				285E53BD147C36ED0053264E /* FugitiveDossierViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +259,7 @@
 				63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */,
 				637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */,
 				287E80DB147923C000E39D09 /* Fugitive.m in Sources */,
+				285E53BC147C36ED0053264E /* FugitiveDossierViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

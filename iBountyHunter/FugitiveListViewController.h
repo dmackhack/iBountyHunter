@@ -10,6 +10,7 @@
 #import "iBountyHunterAppDelegate.h"
 #import "Fugitive.h"
 #import "DetailViewController.h"
+#import "FugitiveDossierViewController.h"
 
 @interface FugitiveListViewController : UITableViewController <NSFetchedResultsControllerDelegate> 
 {
@@ -18,8 +19,11 @@
     NSFetchedResultsController* resultsController_;
     BOOL captured_;
     NSString* cache_;
+    
+    FugitiveDossierViewController* dossierView_;
 }
 
+@property (nonatomic, readonly) IBOutlet FugitiveDossierViewController* dossierView;
 @property (nonatomic, readonly) NSFetchedResultsController* resultsController;
 @property BOOL captured;
 @property (nonatomic, retain) NSString* cache;
