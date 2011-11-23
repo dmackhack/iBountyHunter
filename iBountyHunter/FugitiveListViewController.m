@@ -219,7 +219,7 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
         NSLog(@"IPad detected calling update dossier");
-        [self.dossierView updateDossier];
+        [self.dossierView updateDossier:[self.resultsController objectAtIndexPath:indexPath]];
     }
     else
     {

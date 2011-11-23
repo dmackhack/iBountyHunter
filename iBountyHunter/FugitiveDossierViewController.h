@@ -7,17 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MapKit/MapKit.h>
+#import "Fugitive.h"
 
 @interface FugitiveDossierViewController : UIViewController <UISplitViewControllerDelegate>
 {
-    UILabel* testLabel_;
-    
+    Fugitive* fugitive_;
+    UIImageView* photoView_;
+    MKMapView* mapView_;
+    UIWebView* descriptionView_;
+    UIWebView* sightingsView_;
+    UIPopoverController* popOver_;
+
 }
 
+@property (nonatomic, retain) Fugitive* fugitive;
+@property (nonatomic, retain) IBOutlet UIImageView* photoView;
+@property (nonatomic, retain) IBOutlet MKMapView* mapView;
+@property (nonatomic, retain) IBOutlet UIWebView* descriptionView;
+@property (nonatomic, retain) IBOutlet UIWebView* sightingsView;
+@property (nonatomic, retain) UIPopoverController* popOver;
 
-@property (nonatomic, retain) IBOutlet UILabel* testLabel;
-
-- (void) updateDossier;
+- (void) updateDossier: (Fugitive*) fugitive;
 
 @end
