@@ -61,4 +61,20 @@
 	return YES;
 }
 
+
+#pragma mark - UISplitViewControllerDelegate methods
+
+- (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc {
+    //barButtonItem.title = @"Fugitives";
+    
+    //[self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    //self.popOver = pc;
+}
+
+- (void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+    
+    //[self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    //self.popOver = nil;
+}
+
 @end

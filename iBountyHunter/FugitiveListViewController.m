@@ -8,6 +8,10 @@
 
 #import "FugitiveListViewController.h"
 
+#import "iBountyHunterAppDelegate.h"
+#import "Fugitive.h"
+#import "DetailViewController.h"
+#import "FugitiveDossierViewController.h"
 
 @implementation FugitiveListViewController
 
@@ -214,6 +218,7 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
+        NSLog(@"IPad detected calling update dossier");
         [self.dossierView updateDossier];
     }
     else
