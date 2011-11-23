@@ -8,6 +8,8 @@
 
 #import "FugitiveDossierViewController.h"
 
+#import <QuartzCore/CoreAnimation.h>
+
 #define NO_FUGITIVE_SELECTED_HTML @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>No fugitive selected.</dt><dd></dd></dl></body></html>";
 
 #define NO_KNOWN_LOCATION_HTML @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>No last known location.</dt><dd></dd></dl></body></html>";
@@ -21,7 +23,7 @@
 
 @implementation FugitiveDossierViewController
 
-@synthesize fugitive=fugitive_, photoView=photoView_, mapView=mapView_, descriptionView=descriptionView_, sightingsView=sightingsView_, popOver=popOver_;
+@synthesize fugitive=fugitive_, photoView=photoView_, mapOverlay=mapOverlay_, mapView=mapView_, descriptionView=descriptionView_, sightingsView=sightingsView_, popOver=popOver_;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -71,11 +73,11 @@
     [descriptionView_ loadHTMLString:[self prepareFugitiveDescription] baseURL:baseURL];
     [sightingsView_ loadHTMLString:[self prepareMapDescription] baseURL:baseURL];
     
-    //self.photoView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-    //self.photoView.layer.shadowOpacity = 0.75;
+    self.photoView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.photoView.layer.shadowOpacity = 0.75;
     
-    //self.mapOverlay.layer.shadowOffset = CGSizeMake(1.0, 1.0);
-    //self.mapOverlay.layer.shadowOpacity = 0.75;
+    self.mapOverlay.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    self.mapOverlay.layer.shadowOpacity = 0.75;
 }
 
 - (void)viewDidUnload
@@ -130,7 +132,7 @@
         [self initialiseMapView];
     }
     else {
-        //TODO: self.mapOverlay.hidden = NO;
+        self.mapOverlay.hidden = NO;
     }
     
     if (popOver_ != nil) {
@@ -149,6 +151,8 @@
         
         self.mapView.region = mapRegion;
         self.mapView.mapType = MKMapTypeHybrid;
+        
+        self.mapOverlay.hidden = YES;
     }
 }
 

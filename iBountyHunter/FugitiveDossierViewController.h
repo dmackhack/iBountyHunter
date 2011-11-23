@@ -14,6 +14,7 @@
 {
     Fugitive* fugitive_;
     UIImageView* photoView_;
+    UIImageView* mapOverlay_;
     MKMapView* mapView_;
     UIWebView* descriptionView_;
     UIWebView* sightingsView_;
@@ -23,6 +24,7 @@
 
 @property (nonatomic, retain) Fugitive* fugitive;
 @property (nonatomic, retain) IBOutlet UIImageView* photoView;
+@property (nonatomic, retain) IBOutlet UIImageView* mapOverlay;
 @property (nonatomic, retain) IBOutlet MKMapView* mapView;
 @property (nonatomic, retain) IBOutlet UIWebView* descriptionView;
 @property (nonatomic, retain) IBOutlet UIWebView* sightingsView;

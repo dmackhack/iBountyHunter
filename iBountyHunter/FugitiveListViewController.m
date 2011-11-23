@@ -163,6 +163,10 @@
     Fugitive* fugitive = [self.resultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = fugitive.name;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        cell.textLabel.font = [UIFont fontWithName:@"Noteworthy-Bold" size:20.0];
+    }
     
     return cell;
 }
