@@ -23,12 +23,18 @@
 		287ACDF114739D5400DA22C7 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 287ACDEF14739D5400DA22C7 /* MainWindow_iPad.xib */; };
 		287ACDF914739D9E00DA22C7 /* FugitiveListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDF814739D9E00DA22C7 /* FugitiveListViewController.m */; };
 		287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */; };
-		287E80DB147923C000E39D09 /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 287E80DA147923C000E39D09 /* Fugitive.m */; };
 		287E80DF1479259900E39D09 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287E80DE1479259800E39D09 /* CoreLocation.framework */; };
 		28806805147A4C7600156A90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28806804147A4C7600156A90 /* MapKit.framework */; };
 		28818FCB1475203100EAC21F /* iBountyHunter.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 28818FCA1475203100EAC21F /* iBountyHunter.sqlite */; };
 		637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */; };
 		637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */; };
+		639167DA147D0CC700234DEE /* Fugitive.m in Sources */ = {isa = PBXBuildFile; fileRef = 639167D9147D0CC700234DEE /* Fugitive.m */; };
+		639167E1147D10AE00234DEE /* corkboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 639167DB147D10AD00234DEE /* corkboard.png */; };
+		639167E2147D10AE00234DEE /* fugitive.css in Resources */ = {isa = PBXBuildFile; fileRef = 639167DC147D10AD00234DEE /* fugitive.css */; };
+		639167E3147D10AE00234DEE /* ibountyicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 639167DD147D10AD00234DEE /* ibountyicon.png */; };
+		639167E4147D10AE00234DEE /* pushpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 639167DE147D10AE00234DEE /* pushpin.png */; };
+		639167E5147D10AE00234DEE /* question_mark.png in Resources */ = {isa = PBXBuildFile; fileRef = 639167DF147D10AE00234DEE /* question_mark.png */; };
+		639167E6147D10AE00234DEE /* silhouette.png in Resources */ = {isa = PBXBuildFile; fileRef = 639167E0147D10AE00234DEE /* silhouette.png */; };
 		63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63FAA7291477915D001C0220 /* DetailViewController.m */; };
 		63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63FAA72A1477915D001C0220 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -61,8 +67,6 @@
 		287ACDFA14739FCA00DA22C7 /* CapturedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapturedListViewController.h; sourceTree = "<group>"; };
 		287ACDFB14739FCA00DA22C7 /* CapturedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedListViewController.m; sourceTree = "<group>"; };
 		287E80D41479229B00E39D09 /* iBountyHunter 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 5.xcdatamodel"; sourceTree = "<group>"; };
-		287E80D9147923C000E39D09 /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
-		287E80DA147923C000E39D09 /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
 		287E80DE1479259800E39D09 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		28806804147A4C7600156A90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		28818FCA1475203100EAC21F /* iBountyHunter.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = iBountyHunter.sqlite; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 		637AB04A14790A9600A4581F /* CapturedPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapturedPhotoViewController.m; sourceTree = "<group>"; };
 		637AB04B14790A9600A4581F /* CapturedPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CapturedPhotoViewController.xib; sourceTree = "<group>"; };
 		637AB04F14790D7500A4581F /* iBountyHunter 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 4.xcdatamodel"; sourceTree = "<group>"; };
+		639167D6147D0C3C00234DEE /* iBountyHunter 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "iBountyHunter 6.xcdatamodel"; sourceTree = "<group>"; };
+		639167D8147D0CC700234DEE /* Fugitive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fugitive.h; sourceTree = "<group>"; };
+		639167D9147D0CC700234DEE /* Fugitive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fugitive.m; sourceTree = "<group>"; };
+		639167DB147D10AD00234DEE /* corkboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corkboard.png; sourceTree = "<group>"; };
+		639167DC147D10AD00234DEE /* fugitive.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = fugitive.css; sourceTree = "<group>"; };
+		639167DD147D10AD00234DEE /* ibountyicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ibountyicon.png; sourceTree = "<group>"; };
+		639167DE147D10AE00234DEE /* pushpin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushpin.png; sourceTree = "<group>"; };
+		639167DF147D10AE00234DEE /* question_mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_mark.png; sourceTree = "<group>"; };
+		639167E0147D10AE00234DEE /* silhouette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = silhouette.png; sourceTree = "<group>"; };
 		63FAA7281477915D001C0220 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		63FAA7291477915D001C0220 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		63FAA72A1477915D001C0220 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -125,6 +138,12 @@
 		287ACDD514739D5400DA22C7 /* iBountyHunter */ = {
 			isa = PBXGroup;
 			children = (
+				639167DB147D10AD00234DEE /* corkboard.png */,
+				639167DC147D10AD00234DEE /* fugitive.css */,
+				639167DD147D10AD00234DEE /* ibountyicon.png */,
+				639167DE147D10AE00234DEE /* pushpin.png */,
+				639167DF147D10AE00234DEE /* question_mark.png */,
+				639167E0147D10AE00234DEE /* silhouette.png */,
 				287ACDDE14739D5400DA22C7 /* iBountyHunterAppDelegate.h */,
 				287ACDDF14739D5400DA22C7 /* iBountyHunterAppDelegate.m */,
 				287ACDE114739D5400DA22C7 /* iBountyHunter.xcdatamodeld */,
@@ -138,8 +157,8 @@
 		287ACDD614739D5400DA22C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				287E80D9147923C000E39D09 /* Fugitive.h */,
-				287E80DA147923C000E39D09 /* Fugitive.m */,
+				639167D8147D0CC700234DEE /* Fugitive.h */,
+				639167D9147D0CC700234DEE /* Fugitive.m */,
 				28818FCA1475203100EAC21F /* iBountyHunter.sqlite */,
 				287ACDD714739D5400DA22C7 /* iBountyHunter-Info.plist */,
 				287ACDD814739D5400DA22C7 /* InfoPlist.strings */,
@@ -239,6 +258,12 @@
 				63FAA72C1477915D001C0220 /* DetailViewController.xib in Resources */,
 				637AB04D14790A9600A4581F /* CapturedPhotoViewController.xib in Resources */,
 				285E53BD147C36ED0053264E /* FugitiveDossierViewController.xib in Resources */,
+				639167E1147D10AE00234DEE /* corkboard.png in Resources */,
+				639167E2147D10AE00234DEE /* fugitive.css in Resources */,
+				639167E3147D10AE00234DEE /* ibountyicon.png in Resources */,
+				639167E4147D10AE00234DEE /* pushpin.png in Resources */,
+				639167E5147D10AE00234DEE /* question_mark.png in Resources */,
+				639167E6147D10AE00234DEE /* silhouette.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +283,8 @@
 				287ACDFC14739FCA00DA22C7 /* CapturedListViewController.m in Sources */,
 				63FAA72B1477915D001C0220 /* DetailViewController.m in Sources */,
 				637AB04C14790A9600A4581F /* CapturedPhotoViewController.m in Sources */,
-				287E80DB147923C000E39D09 /* Fugitive.m in Sources */,
 				285E53BC147C36ED0053264E /* FugitiveDossierViewController.m in Sources */,
+				639167DA147D0CC700234DEE /* Fugitive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +409,13 @@
 		287ACDE114739D5400DA22C7 /* iBountyHunter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				639167D6147D0C3C00234DEE /* iBountyHunter 6.xcdatamodel */,
 				287E80D41479229B00E39D09 /* iBountyHunter 5.xcdatamodel */,
 				637AB04F14790D7500A4581F /* iBountyHunter 4.xcdatamodel */,
 				28051EED14785B8400FC3A7F /* iBountyHunter 3.xcdatamodel */,
 				287ACDE214739D5400DA22C7 /* iBountyHunter.xcdatamodel */,
 			);
-			currentVersion = 287E80D41479229B00E39D09 /* iBountyHunter 5.xcdatamodel */;
+			currentVersion = 639167D6147D0C3C00234DEE /* iBountyHunter 6.xcdatamodel */;
 			path = iBountyHunter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

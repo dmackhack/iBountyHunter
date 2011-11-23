@@ -8,9 +8,15 @@
 
 #import "FugitiveDossierViewController.h"
 
+#define NO_FUGITIVE_SELECTED_HTML @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>No fugitive selected.</dt><dd></dd></dl></body></html>";
+
+#define NO_KNOWN_LOCATION_HTML @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>No last known location.</dt><dd></dd></dl></body></html>";
+
 
 @interface FugitiveDossierViewController ()
-    - (void)initialiseMapView;
+- (void)initialiseMapView;
+- (NSString*) prepareFugitiveDescription;
+- (NSString*) prepareMapDescription;
 @end
 
 @implementation FugitiveDossierViewController
@@ -52,6 +58,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UIImage *backgroundTexture = [UIImage imageNamed:@"corkboard.png"];
+    UIColor *backgroundColor = [UIColor colorWithPatternImage:backgroundTexture];
+    [self.view setBackgroundColor:backgroundColor];
+    
+    [descriptionView_ setBackgroundColor:[UIColor clearColor]];
+    [mapView_ setBackgroundColor:[UIColor clearColor]];
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    [descriptionView_ loadHTMLString:[self prepareFugitiveDescription] baseURL:baseURL];
+    [sightingsView_ loadHTMLString:[self prepareMapDescription] baseURL:baseURL];
+    
+    //self.photoView.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    //self.photoView.layer.shadowOpacity = 0.75;
+    
+    //self.mapOverlay.layer.shadowOffset = CGSizeMake(1.0, 1.0);
+    //self.mapOverlay.layer.shadowOpacity = 0.75;
 }
 
 - (void)viewDidUnload
@@ -90,20 +114,36 @@
     NSLog(@"Updating Dossier");
     self.fugitive = fugitive;
     
-    if (fugitive_.image != nil)
-    {
+    if (fugitive_.image != nil) {
         self.photoView.image = [UIImage imageWithData:fugitive_.image];
     }
+    else {
+        self.photoView.image = [UIImage imageNamed:@"silhouette.png"];
+    }
     
-    [self initialiseMapView];
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    [descriptionView_ loadHTMLString:[self prepareFugitiveDescription] baseURL:baseURL];
+    [sightingsView_ loadHTMLString:[self prepareMapDescription] baseURL:baseURL];
+    
+    if (fugitive_.lastSeenLat != nil) {
+        [self initialiseMapView];
+    }
+    else {
+        //TODO: self.mapOverlay.hidden = NO;
+    }
+    
+    if (popOver_ != nil) {
+        [popOver_ dismissPopoverAnimated:YES];
+    }
     
 }
 
 - (void)initialiseMapView
 {
-    if ([fugitive_.captured boolValue])
+    if ([fugitive_.lastSeenLat boolValue])
     {
-        CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake([fugitive_.capturedLat doubleValue], [fugitive_.capturedLon doubleValue]);
+        CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake([fugitive_.lastSeenLat doubleValue], [fugitive_.lastSeenLon doubleValue]);
         MKCoordinateSpan mapSpan = MKCoordinateSpanMake(0.005, 0.005);
         MKCoordinateRegion mapRegion = MKCoordinateRegionMake(mapCenter, mapSpan);
         
@@ -111,5 +151,41 @@
         self.mapView.mapType = MKMapTypeHybrid;
     }
 }
+
+- (NSString *) prepareFugitiveDescription {
+    NSString *response = nil;
+    
+    if (self.fugitive) {
+        response = [NSString stringWithFormat: @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>Name:</dt><dd>%@</dd><dt>ID:</dt><dd>%@</dd><dt>Bounty:</dt><dd>%@</dd><dt>Description:</dt><dd>%@</dd></dl></body></html>",
+                    fugitive_.name,
+                    [fugitive_.fugitiveID stringValue],
+                    [fugitive_.bounty stringValue],
+                    fugitive_.desc];
+    }
+    else {
+        response = NO_FUGITIVE_SELECTED_HTML;
+    }
+    return response;
+}
+
+- (NSString *) prepareMapDescription {
+    NSString *response = nil;
+    if (self.fugitive && self.fugitive.lastSeenDesc) {
+        response = [NSString stringWithFormat: @"<html><link rel=\"stylesheet\" type=\"text/css\" href=\"fugitive.css\" /><body><dl class=\"dossier\"><dt>Last Seen:</dt><dd>%6.3f, %6.3f</dd><dt>Description:</dt><dd>%@</dd></dl></body></html>",
+                    [fugitive_.lastSeenLat doubleValue],
+                    [fugitive_.lastSeenLon doubleValue],
+                    fugitive_.lastSeenDesc];
+    }
+    else if (self.fugitive) {
+        response = NO_KNOWN_LOCATION_HTML;
+    }
+    else {
+        response = NO_FUGITIVE_SELECTED_HTML;
+    }
+    
+    return response;
+}
+
+
 
 @end

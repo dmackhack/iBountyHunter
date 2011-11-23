@@ -2,7 +2,7 @@
 //  Fugitive.m
 //  iBountyHunter
 //
-//  Created by David Mackenzie on 20/11/11.
+//  Created by David MacKenzie on 23/11/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,27 +10,31 @@
 
 
 @implementation Fugitive
-@dynamic desc;
-@dynamic captured;
-@dynamic bounty;
-@dynamic captdate;
-@dynamic name;
-@dynamic fugitiveID;
-@dynamic image;
-@dynamic capturedLat;
-@dynamic capturedLon;
 
-- (CLLocationCoordinate2D)coordinate
+@dynamic bounty;
+@dynamic capturedLat;
+@dynamic captured;
+@dynamic capturedLon;
+@dynamic image;
+@dynamic fugitiveID;
+@dynamic captdate;
+@dynamic desc;
+@dynamic name;
+@dynamic lastSeenLat;
+@dynamic lastSeenLon;
+@dynamic lastSeenDesc;
+
+- (CLLocationCoordinate2D) coordinate 
 {
     return CLLocationCoordinate2DMake([self.capturedLat doubleValue], [self.capturedLon doubleValue]);
 }
 
--(NSString *)title
+- (NSString *) title 
 {
     return self.name;
 }
 
-- (NSString *)subtitle
+- (NSString *) subtitle 
 {
     return self.desc;
 }
