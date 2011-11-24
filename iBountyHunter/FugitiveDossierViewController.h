@@ -19,6 +19,8 @@
     UIWebView* descriptionView_;
     UIWebView* sightingsView_;
     UIPopoverController* popOver_;
+    UITextField* latView_;
+    UITextField* lonView_;
 
 }
 
@@ -29,7 +31,11 @@
 @property (nonatomic, retain) IBOutlet UIWebView* descriptionView;
 @property (nonatomic, retain) IBOutlet UIWebView* sightingsView;
 @property (nonatomic, retain) UIPopoverController* popOver;
+@property (nonatomic, retain) IBOutlet UITextField* latView;
+@property (nonatomic, retain) IBOutlet UITextField* lonView;
 
 - (void) updateDossier: (Fugitive*) fugitive;
+- (IBAction)latValueChanged:(id)sender;
+- (IBAction)lonValueChanged:(id)sender;
 
 @end

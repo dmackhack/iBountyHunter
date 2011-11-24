@@ -26,4 +26,6 @@
 @property BOOL captured;
 @property (nonatomic, retain) NSString* cache;
 
+
+
 @end

@@ -23,7 +23,7 @@
 
 @implementation FugitiveDossierViewController
 
-@synthesize fugitive=fugitive_, photoView=photoView_, mapOverlay=mapOverlay_, mapView=mapView_, descriptionView=descriptionView_, sightingsView=sightingsView_, popOver=popOver_;
+@synthesize fugitive=fugitive_, photoView=photoView_, mapOverlay=mapOverlay_, mapView=mapView_, descriptionView=descriptionView_, sightingsView=sightingsView_, popOver=popOver_, latView=latView_, lonView=lonView_;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,6 +43,8 @@
     [descriptionView_ release];
     [sightingsView_ release];
     [popOver_ release];
+    [latView_ release];
+    [lonView_ release];
     [super dealloc];
 }
 
@@ -66,7 +68,7 @@
     [self.view setBackgroundColor:backgroundColor];
     
     [descriptionView_ setBackgroundColor:[UIColor clearColor]];
-    [mapView_ setBackgroundColor:[UIColor clearColor]];
+    [sightingsView_ setBackgroundColor:[UIColor clearColor]];
     
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
@@ -128,6 +130,9 @@
     [descriptionView_ loadHTMLString:[self prepareFugitiveDescription] baseURL:baseURL];
     [sightingsView_ loadHTMLString:[self prepareMapDescription] baseURL:baseURL];
     
+    self.latView.text = [fugitive_.lastSeenLat stringValue];
+    self.lonView.text = [fugitive_.lastSeenLon stringValue];
+    
     if (fugitive_.lastSeenLat != nil) {
         [self initialiseMapView];
     }
@@ -141,9 +146,21 @@
     
 }
 
+- (IBAction)latValueChanged:(id)sender 
+{
+    NSLog(@"Setting Lat: %@", latView_.text);
+    fugitive_.lastSeenLat = [NSNumber numberWithDouble:[latView_.text doubleValue]];
+}
+
+- (IBAction)lonValueChanged:(id)sender 
+{
+    NSLog(@"Setting Lon: %@", latView_.text);
+    fugitive_.lastSeenLon = [NSNumber numberWithDouble:[lonView_.text doubleValue]];
+}
+
 - (void)initialiseMapView
 {
-    if ([fugitive_.lastSeenLat boolValue])
+    if (fugitive_.lastSeenLat != nil)
     {
         CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake([fugitive_.lastSeenLat doubleValue], [fugitive_.lastSeenLon doubleValue]);
         MKCoordinateSpan mapSpan = MKCoordinateSpanMake(0.005, 0.005);
@@ -189,7 +206,6 @@
     
     return response;
 }
-
 
 
 @end
