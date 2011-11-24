@@ -99,6 +99,9 @@
 #pragma mark - UISplitViewControllerDelegate methods
 
 - (void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc {
+    
+    NSLog(@"show button");
+    
     barButtonItem.title = @"Fugitives";
     
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
@@ -106,6 +109,8 @@
 }
 
 - (void) splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+
+    NSLog(@"hide button");
     
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.popOver = nil;
@@ -118,10 +123,12 @@
     NSLog(@"Updating Dossier");
     self.fugitive = fugitive;
     
-    if (fugitive_.image != nil) {
+    if (fugitive_.image != nil) 
+    {
         self.photoView.image = [UIImage imageWithData:fugitive_.image];
     }
-    else {
+    else 
+    {
         self.photoView.image = [UIImage imageNamed:@"silhouette.png"];
     }
     
@@ -150,18 +157,22 @@
 {
     NSLog(@"Setting Lat: %@", latView_.text);
     fugitive_.lastSeenLat = [NSNumber numberWithDouble:[latView_.text doubleValue]];
+    [self initialiseMapView];
 }
 
 - (IBAction)lonValueChanged:(id)sender 
 {
     NSLog(@"Setting Lon: %@", latView_.text);
     fugitive_.lastSeenLon = [NSNumber numberWithDouble:[lonView_.text doubleValue]];
+    [self initialiseMapView];
 }
 
 - (void)initialiseMapView
 {
+    NSLog(@"Updating map: %@", [fugitive_.lastSeenLat stringValue]);
     if (fugitive_.lastSeenLat != nil)
     {
+        NSLog(@"Updating map");
         CLLocationCoordinate2D mapCenter = CLLocationCoordinate2DMake([fugitive_.lastSeenLat doubleValue], [fugitive_.lastSeenLon doubleValue]);
         MKCoordinateSpan mapSpan = MKCoordinateSpanMake(0.005, 0.005);
         MKCoordinateRegion mapRegion = MKCoordinateRegionMake(mapCenter, mapSpan);
